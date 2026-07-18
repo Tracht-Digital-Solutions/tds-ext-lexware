@@ -1,0 +1,10 @@
+---
+// Lexware dashboard widget shell (server component). Renders card chrome and
+// embeds the hydrated island that fetches /lexware/summary.
+import WidgetBody from "../islands/WidgetBody.tsx";
+---
+
+<article class="widget widget--lexware">
+  <h3>Lexware-Rechnungen</h3>
+  <WidgetBody client:load />
+</article>

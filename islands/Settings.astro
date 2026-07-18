@@ -1,0 +1,11 @@
+---
+// Lexware settings section shell, rendered by the base Einstellungen host via
+// virtual:panel-settings. The island persists into the core settings store
+// (/admin/settings/lexware) + offers a connection test.
+import LexwareSettings from "./LexwareSettings.tsx";
+---
+
+<div class="settings-section settings-section--lexware">
+  <h3>Lexware Office</h3>
+  <LexwareSettings client:load />
+</div>

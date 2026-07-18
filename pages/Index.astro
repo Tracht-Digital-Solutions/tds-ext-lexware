@@ -1,0 +1,14 @@
+---
+// Lexware billing-hub main page, injected into the host build via the manifest's
+// route slot. The full UI is a hydrated React island (tabs: Kunden / Zeit /
+// Kontakte / Rechnungen).
+import LexwareHub from "../islands/LexwareHub.tsx";
+---
+
+<section class="page page--lexware">
+  <h1>Lexware</h1>
+  <p class="page__intro">
+    Kunden &amp; Projekte, Zeiterfassung zuordnen, Kontakte und Rechnungen an Lexware Office.
+  </p>
+  <LexwareHub client:load />
+</section>
