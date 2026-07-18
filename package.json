@@ -1,6 +1,6 @@
 {
   "name": "@tracht-digital-solutions/tds-ext-lexware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lexware-Office billing hub for the TDS panel: customer/project directory, time→invoice export, contact/lead push. Ships the frontend manifest, PHP Module, and the dual CI/publish pipeline.",
   "license": "UNLICENSED",
   "private": false,
