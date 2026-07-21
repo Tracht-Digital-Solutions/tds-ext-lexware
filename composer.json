@@ -3,7 +3,7 @@
   "description": "Lexware-Office billing hub for the TDS panel (backend Module).",
   "type": "library",
   "license": "proprietary",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "require": {
     "php": ">=8.1",
     "slim/slim": "^4.13",
