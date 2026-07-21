@@ -1,18 +1,18 @@
-# tds-ext-lexware
+# tds-ext-lexware-pkg
 
 **Lexware billing hub** for the TDS panel — connects the panel's data to Lexware
 Office (formerly lexoffice). A build-time-composed extension for the panel
-platform (`tds-panel-contract` + `tds-core-panel-*`).
+platform (`tds-panel-contract-pkg` + `tds-core-panel-*`).
 
 ## Features
 
 - **Customer/project directory** (`lx_customer`, `lx_project`) with per-customer /
   per-project net hourly rate + tax rate.
-- **Time → invoice** — link `tds-ext-time-tracker` entries to a project, then
+- **Time → invoice** — link `tds-ext-time-tracker-pkg` entries to a project, then
   export a Lexware invoice (draft or finalized) for a customer/project + date
   range. Aggregates hours into service line items.
 - **Contact / lead push** — send directory customers, or leads harvested from
-  `tds-ext-contact-tickets` / `tds-ext-support-tickets`, to Lexware as contacts
+  `tds-ext-contact-tickets-pkg` / `tds-ext-support-tickets-pkg`, to Lexware as contacts
   (deduped, `lexware_contact_id` stored back).
 - **Invoice log** + dashboard widget + settings panel (API key / URL / defaults)
   with a connection test.

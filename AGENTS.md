@@ -1,8 +1,8 @@
-# AGENTS.md — tds-ext-lexware
+# AGENTS.md — tds-ext-lexware-pkg
 
 The **Lexware billing hub** panel extension: connects the panel's data to
-Lexware Office (formerly lexoffice). Read `tds-panel-contract`'s AGENTS.md first
-(extensions implement that contract); `tds-ext-support-tickets` is the deepest
+Lexware Office (formerly lexoffice). Read `tds-panel-contract-pkg`'s AGENTS.md first
+(extensions implement that contract); `tds-ext-support-tickets-pkg` is the deepest
 reference for the container-first Module pattern, and this extension ports the
 Lexware client/invoice logic originally in `tds-customer-api`.
 
@@ -14,7 +14,7 @@ An **admin-only** extension (`lexware:read` / `lexware:write`) with four surface
 1. **Customer/project directory** (`lx_customer`, `lx_project`) — a lightweight
    directory the extension owns so tracked time can be tied to a customer + rate
    before billing. NOT the (future) org-wide customer directory.
-2. **Time → invoice export** — aggregates `tds-ext-time-tracker` `time_entry`
+2. **Time → invoice export** — aggregates `tds-ext-time-tracker-pkg` `time_entry`
    rows that are linked to a project (`lx_time_link`) into a Lexware invoice
    (`POST /v1/invoices`, draft or `?finalize=true`). Effective net rate:
    request override → project → customer → global default.
