@@ -1,4 +1,4 @@
-import { defineExtension } from "@tracht-digital-solutions/tds-panel-contract";
+import { defineExtension } from "@tracht-digital-solutions/tds-frontend-contract";
 
 /**
  * Lexware billing-hub manifest. Admin-only extension: a customer/project

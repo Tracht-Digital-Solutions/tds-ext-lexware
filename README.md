@@ -1,8 +1,8 @@
 # tds-ext-lexware-pkg
 
-**Lexware billing hub** for the TDS panel — connects the panel's data to Lexware
-Office (formerly lexoffice). A build-time-composed extension for the panel
-platform (`tds-panel-contract-pkg` + `tds-core-panel-*`).
+**Lexware billing hub** for the TDS frontend — connects the frontend's data to Lexware
+Office (formerly lexoffice). A build-time-composed extension for the frontend
+platform (`tds-frontend-contract-pkg` + `tds-core-frontend-*`).
 
 ## Features
 
@@ -14,7 +14,7 @@ platform (`tds-panel-contract-pkg` + `tds-core-panel-*`).
 - **Contact / lead push** — send directory customers, or leads harvested from
   `tds-ext-contact-tickets-pkg` / `tds-ext-support-tickets-pkg`, to Lexware as contacts
   (deduped, `lexware_contact_id` stored back).
-- **Invoice log** + dashboard widget + settings panel (API key / URL / defaults)
+- **Invoice log** + dashboard widget + settings frontend (API key / URL / defaults)
   with a connection test.
 
 Admin-only (`lexware:read` / `lexware:write`). Shipped in the **admin** product
@@ -30,7 +30,7 @@ table), so it composes even when a source extension is absent. Its own data is
 ## Configure
 
 Runtime settings live in the core store (ns `lexware`, admin
-`/admin/settings/lexware`, or the Einstellungen panel): `api_key` (secret),
+`/admin/settings/lexware`, or the Einstellungen frontend): `api_key` (secret),
 `api_url` (default `https://api.lexware.io/v1`; sandbox
 `https://api.lexware-sandbox.de/v1`), `default_hourly_rate`, `default_tax_rate`.
 Each falls back to an env var (`LEXWARE_API_KEY` etc.). Create the API key in
@@ -40,15 +40,15 @@ routes return 503.
 ## Develop
 
 ```bash
-npm install --no-package-lock   # pulls tds-panel-contract from GitHub Packages (needs NPM_TOKEN)
+npm install --no-package-lock   # pulls tds-frontend-contract from GitHub Packages (needs NPM_TOKEN)
 npm run type-check && npm run build
-composer install                # resolves tds-panel-contract from its public VCS repo
+composer install                # resolves tds-frontend-contract from its public VCS repo
 composer test                   # phpunit: Module RBAC + builder units (DB-free)
 ```
 
 Enable it: add the manifest to the admin `astro.config.mjs`
-(`panelHost({ extensions: [...] })`) and `new LexwareModule()` to
-`tds-core-panel-api`'s `Modules::enabled()`.
+(`frontendHost({ extensions: [...] })`) and `new LexwareModule()` to
+`tds-core-frontend-api`'s `Modules::enabled()`.
 
 ## Versioning
 

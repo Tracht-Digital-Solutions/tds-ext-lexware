@@ -18,11 +18,11 @@ use Tds\Ext\Lexware\Service\LexwareContactBuilder;
 use Tds\Ext\Lexware\Service\LexwareException;
 use Tds\Ext\Lexware\Service\LexwareInvoiceBuilder;
 use Tds\Ext\Lexware\Service\SourceGateway;
-use Tds\Panel\Contract\AbstractModule;
-use Tds\Panel\Contract\PermissionDef;
-use Tds\Panel\Contract\SettingDef;
-use Tds\Panel\Contract\SettingsStore;
-use Tds\Panel\Contract\UserContext;
+use Tds\Frontend\Contract\AbstractModule;
+use Tds\Frontend\Contract\PermissionDef;
+use Tds\Frontend\Contract\SettingDef;
+use Tds\Frontend\Contract\SettingsStore;
+use Tds\Frontend\Contract\UserContext;
 
 /**
  * Backend Module for the Lexware billing hub. Connects the panel's data to

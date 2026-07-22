@@ -1,7 +1,7 @@
 # AGENTS.md — tds-ext-lexware-pkg
 
-The **Lexware billing hub** panel extension: connects the panel's data to
-Lexware Office (formerly lexoffice). Read `tds-panel-contract-pkg`'s AGENTS.md first
+The **Lexware billing hub** frontend extension: connects the frontend's data to
+Lexware Office (formerly lexoffice). Read `tds-frontend-contract-pkg`'s AGENTS.md first
 (extensions implement that contract); `tds-ext-support-tickets-pkg` is the deepest
 reference for the container-first Module pattern, and this extension ports the
 Lexware client/invoice logic originally in `tds-customer-api`.
@@ -9,7 +9,7 @@ Lexware client/invoice logic originally in `tds-customer-api`.
 ## What it does
 
 An **admin-only** extension (`lexware:read` / `lexware:write`) with four surfaces
-(one hub page, tabs) + a dashboard widget + a settings panel:
+(one hub page, tabs) + a dashboard widget + a settings frontend:
 
 1. **Customer/project directory** (`lx_customer`, `lx_project`) — a lightweight
    directory the extension owns so tracked time can be tied to a customer + rate
@@ -52,7 +52,7 @@ An **admin-only** extension (`lexware:read` / `lexware:write`) with four surface
 
 ## Conventions baked in (from the template)
 
-- Depends on the **published** `tds-panel-contract` `^1.0.0` — Composer via the
+- Depends on the **published** `tds-frontend-contract` `^1.0.0` — Composer via the
   public **VCS** repo (no path repo — CI fatals on a missing path repo), npm from
   GitHub Packages (`.npmrc` + `NPM_TOKEN` set from `PACKAGE_TOKEN`).
 - CI installs with **`npm install --no-package-lock`** (win32 lockfile breaks the
@@ -69,5 +69,5 @@ npm install --no-package-lock && npm run type-check && npm run build
 
 DB-backed integration runs against real MariaDB/MySQL only when `TDS_TEST_DB_DSN`
 is set (the unit suite is DB-free — auth/validation short-circuits before any
-repo). Register `new LexwareModule()` in `tds-core-panel-api`'s `Modules::enabled()`
-and add the manifest to the admin target's `panelHost({ extensions })`.
+repo). Register `new LexwareModule()` in `tds-core-frontend-api`'s `Modules::enabled()`
+and add the manifest to the admin target's `frontendHost({ extensions })`.
